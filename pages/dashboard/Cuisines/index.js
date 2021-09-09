@@ -9,7 +9,7 @@ const DeliveryPerson = dynamic(() => import('../../../modules/Dashboards/Cuisine
 
 const DeliveryPersonDashboard = () => (
   <SecurePage>
-    <DeliveryPerson />
+   <DeliveryPerson/>
   </SecurePage>
 );
 
