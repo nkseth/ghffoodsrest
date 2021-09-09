@@ -8,7 +8,7 @@ const Personalinfo = () => {
     
     <Grid container style={{background:'white',padding:'10px'}} alignItems="center" justifyContent="center" spacing={3}>
 <Grid sm={12}  alignItems="center" justifyContent="flex-start" container>
-    <label style={{fontWeight:'bold',marginBottom:'10px'}}>Edit Cuisine</label>
+    <label style={{fontWeight:'bold',marginBottom:'10px'}}>Add Cuisine</label>
 </Grid>
 <Grid sm={12}  alignItems="center" justifyContent="center" container direction="column">
     <label style={{fontWeight:'bold',marginBottom:'10px'}}>Cuisine Image</label>
@@ -40,7 +40,9 @@ const Personalinfo = () => {
 <lable>Status</lable>
     <Switch color="primary"/>
 </Grid>
-
+<Grid sm={12} item>
+<Button variant="contained" color='primary'>DONE</Button>
+</Grid>
 
 
     </Grid> );

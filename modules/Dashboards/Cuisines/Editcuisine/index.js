@@ -2,7 +2,7 @@ import React from 'react';
 import makeStyles from '@material-ui/core/styles/makeStyles';
 import GridContainer from '../../../../@jumbo/components/GridContainer';
 import PageContainer from '../../../../@jumbo/components/PageComponents/layouts/PageContainer';
-import Personalinfo from './personalinfo'
+import Personalinfo from './Cuisineform'
 
 import { Grid } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({

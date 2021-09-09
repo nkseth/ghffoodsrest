@@ -41,7 +41,9 @@ const Personalinfo = () => {
     <Switch color="primary"/>
 </Grid>
 
-
+<Grid sm={12} item>
+<Button variant="contained" color='primary'>DONE</Button>
+</Grid>
 
     </Grid> );
 }

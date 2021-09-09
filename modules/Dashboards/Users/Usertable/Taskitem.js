@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
   },
   titleRoot: {
     color: theme.palette.text.disabled,
-    fontSize: 12,
+    fontSize: 15,
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
@@ -77,27 +77,36 @@ const [dstate,setdstate]=useState(false)
      
       <GridContainer alignItems="center"> 
         
-<Grid sm={1}>
+<Grid>
  <Checkbox checked={isCompleted} onChange={(e) => setIsCompleted(e.target.checked)} />
 </Grid>
-<Grid item sm={2}>
+<Grid  >
            <Typography className={classes.titleRoot}>{index+1}</Typography>
         </Grid>
-       <Grid item sm={2}>
-         <Avatar></Avatar>
-        </Grid> 
-        
-         <Grid item sm={4}>
-           <Typography className={classes.titleRoot}>{item.Name}</Typography>
+  <Grid item sm={2} container justifyContent="center">
+           <Typography style={{textAlign:'center'}} className={classes.titleRoot}>{item.Name}</Typography>
         </Grid>
-        
-        
-<Grid item sm={3}>
+        <Grid item sm={1}>
+       <Typography className={classes.titleRoot}>{item.Role}</Typography>
+        </Grid> 
+        <Grid item sm={3}>
+       <Typography className={classes.titleRoot}>{item.Email}</Typography>
+        </Grid> 
+        <Grid item sm={2}>
+       <Typography className={classes.titleRoot}>{item.Contact}</Typography>
+        </Grid> 
+
+<Grid item sm={3} >
            <Box style={{display:'flex',flexDirection:'row' ,alignItems:'center'}}>
                   <Switch />
-                
+                  <Tooltip title="View" 
+                   onClick={()=>{router.push("/dashboard/Users/Edituser/19")}}  >
+                   <IconButton >
+                    < VisibilityIcon/>
+                   </IconButton>
+                   </Tooltip>
                    <Tooltip title="Edit" 
-                   onClick={()=>{router.push("/dashboard/Cuisines/Editcuisine/19")}}  >
+                   onClick={()=>{router.push("/dashboard/Users/Edituser/19")}}  >
                    <IconButton >
                     < EditIcon/>
                    </IconButton>
