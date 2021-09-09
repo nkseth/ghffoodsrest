@@ -32,7 +32,7 @@ const SideBar = () => {
   return (
     <PerfectScrollbar className={classes.perfectScrollbarSidebar}>
       <CmtVertical menuItems={sidebarNavs} />
-      <SidebarButtons />
+      
     </PerfectScrollbar>
   );
 };

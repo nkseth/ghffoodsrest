@@ -229,7 +229,7 @@ const rows=[{
 
 
   return (
-    <CmtCard style={{minHeight:'53vh',paddingBottom:'10px'}}>
+    <CmtCard style={{minHeight:'53vh',paddingBottom:'10px',position:'relative'}}>
       <CmtCardHeader
         className={classes.headerRoot}
         title={

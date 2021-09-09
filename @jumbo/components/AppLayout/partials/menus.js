@@ -2,7 +2,9 @@ import IntlMessages from '../../../utils/IntlMessages';
 import {
   AccountCircle,
   Dashboard,
+  Settings,
   ArrowForward,
+  PeopleAlt,
   Category,
   Chat,
   CheckCircle,
@@ -71,16 +73,16 @@ const dashboardsMenus = [
     link: '/dashboard/Cuisines',
   },
   {
-    name: <IntlMessages id={'sidebar.dashboard.news'} />,
-    icon: <ImportContacts />,
+    name: <IntlMessages id={'sidebar.dashboard.users'} />,
+    icon: <PeopleAlt />,
     type: 'item',
-    link: '/dashboard/news',
+    link: '/dashboard/Users',
   },
   {
-    name: <IntlMessages id={'sidebar.dashboard.misc'} />,
-    icon: <LibraryBooks />,
+    name: <IntlMessages id={'sidebar.dashboard.settings'} />,
+    icon: <Settings />,
     type: 'item',
-    link: '/dashboard/misc',
+    link: '/dashboard/Settings',
   },
 ];
 
@@ -1183,46 +1185,8 @@ export const sidebarNavs = [
     type: 'section',
     children: dashboardsMenus,
   },
-  {
-    name: <IntlMessages id={'sidebar.components'} />,
-    type: 'section',
-    children: [muiComponentsMenus, cmtComponentsMenus, widgetsMenus, metricsMenus],
-  },
-  {
-    name: <IntlMessages id={'sidebar.Apps'} />,
-    type: 'section',
-    children: appsMenus,
-  },
-  {
-    name: <IntlMessages id={'sidebar.social'} />,
-    type: 'section',
-    children: socialAppsMenus,
-  },
-  {
-    name: <IntlMessages id={'sidebar.view'} />,
-    type: 'section',
-    children: [customTimelineMenus, materialTimelineMenus],
-  },
-  {
-    name: <IntlMessages id={'sidebar.extensions'} />,
-    type: 'section',
-    children: [editorsMenus, pickersMenus, ...extensionsMenus],
-  },
-  {
-    name: <IntlMessages id={'sidebar.modules'} />,
-    type: 'section',
-    children: [usersMenus, calendarMenus],
-  },
-  {
-    name: <IntlMessages id={'sidebar.visualization'} />,
-    type: 'section',
-    children: [chartMenus, mapsMenus],
-  },
-  {
-    name: <IntlMessages id={'sidebar.extraPages'} />,
-    type: 'section',
-    children: [loginPagesMenus, signupPagesMenus, forgotPasswordMenus, errorPagesMenus],
-  },
+  
+ 
 ];
 
 export const horizontalDefaultNavs = [
@@ -1231,57 +1195,9 @@ export const horizontalDefaultNavs = [
     type: 'collapse',
     children: dashboardsMenus,
   },
-  {
-    name: <IntlMessages id={'sidebar.components'} />,
-    type: 'collapse',
-    children: [muiComponentsHorizontalMenus, cmtComponentsHorizontalMenus, widgetsMenus, metricsMenus],
-  },
-  {
-    name: <IntlMessages id={'sidebar.Apps'} />,
-    type: 'collapse',
-    children: appsMenus,
-  },
-  {
-    name: <IntlMessages id={'sidebar.social'} />,
-    type: 'collapse',
-    children: socialAppsMenus,
-  },
-  {
-    name: <IntlMessages id={'sidebar.visualization'} />,
-    type: 'collapse',
-    children: [chartMenus, mapsMenus],
-  },
-  {
-    name: <IntlMessages id={'sidebar.extras'} />,
-    type: 'collapse',
-    children: [
-      {
-        name: <IntlMessages id={'sidebar.extraPages'} />,
-        icon: <Pages />,
-        type: 'collapse',
-        children: [loginPagesMenus, signupPagesMenus, forgotPasswordMenus, errorPagesMenus],
-      },
-      customTimelineMenus,
-      materialTimelineMenus,
-      calendarMenus,
-      usersMenus,
-    ],
-  },
-  {
-    name: <IntlMessages id={'sidebar.extensions'} />,
-    type: 'mega',
-    children: [
-      editorsMenus,
-      pickersMenus,
-      {
-        name: <IntlMessages id={'sidebar.extensions'} />,
-        icon: <VpnKey />,
-        type: 'collapse',
-        children: extensionsMenus,
-      },
-    ],
-  },
-];
+  
+    ];
+
 
 export const minimalHorizontalMenus = [
   {
@@ -1289,46 +1205,5 @@ export const minimalHorizontalMenus = [
     type: 'collapse',
     children: dashboardsMenus,
   },
-  {
-    name: <IntlMessages id={'sidebar.components'} />,
-    type: 'collapse',
-    children: [muiComponentsHorizontalMenus, cmtComponentsHorizontalMenus, widgetsMenus, metricsMenus],
-  },
-  {
-    name: <IntlMessages id={'sidebar.Apps'} />,
-    type: 'collapse',
-    children: [...appsMenus, ...socialAppsMenus],
-  },
-  {
-    name: <IntlMessages id={'sidebar.extras'} />,
-    type: 'collapse',
-    children: [
-      {
-        name: <IntlMessages id={'sidebar.extraPages'} />,
-        icon: <Pages />,
-        type: 'collapse',
-        children: [loginPagesMenus, signupPagesMenus, forgotPasswordMenus, errorPagesMenus],
-      },
-      chartMenus,
-      mapsMenus,
-      customTimelineMenus,
-      materialTimelineMenus,
-      calendarMenus,
-      usersMenus,
-    ],
-  },
-  {
-    name: <IntlMessages id={'sidebar.extensions'} />,
-    type: 'mega',
-    children: [
-      editorsMenus,
-      pickersMenus,
-      {
-        name: <IntlMessages id={'sidebar.extensions'} />,
-        icon: <VpnKey />,
-        type: 'collapse',
-        children: extensionsMenus,
-      },
-    ],
-  },
+  
 ];

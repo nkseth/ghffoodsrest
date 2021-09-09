@@ -1,7 +1,7 @@
 import React from 'react';
-import { Grid } from '@material-ui/core';
+import { Box, Button, Grid } from '@material-ui/core';
 
-
+import {useRouter} from 'next/router' 
 import makeStyles from '@material-ui/core/styles/makeStyles';
 import DeliveryZoneList from './Cuisinetable'
 import GridContainer from '../../../@jumbo/components/GridContainer';
@@ -27,11 +27,16 @@ const breadcrumbs = [
 ];
 
 const ListingDashboard = () => {
+  const router=useRouter()
   const classes = useStyles();
   return (
     <PageContainer heading="Cuisine Menu" breadcrumbs={breadcrumbs} style={{overflowY:'hidden'}}>
       <GridContainer>
+        <Box mb={2}>
+        <Button variant="contained" color="primary" onClick={()=>{router.push("/dashboard/Cuisines/Editcuisine/1")}} >ADD NEW</Button>
+        </Box>
         <Grid item xs={12} >
+
           <DeliveryZoneList />
         </Grid>
        

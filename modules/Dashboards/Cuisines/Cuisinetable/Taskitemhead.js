@@ -72,7 +72,7 @@ const TaskItem = ({ item ,type}) => {
   const classes = useStyles();
 const [dstate,setdstate]=useState(false)
   return (
-    <div className={classes.taskItemRoot}>
+    <div className={classes.taskItemRoot} style={{position:'sticky',top:0,left:0}}>
       <Deletemodel open={dstate} close={()=>{setdstate(false)}}/>
       <GridContainer alignItems="center"> 
         
