@@ -27,7 +27,7 @@ import {
   Map,
   MonetizationOn,
   DirectionsBike,
- 
+  LocalDining,
   NotificationImportant,
   Notifications,
   Pages,
@@ -65,10 +65,10 @@ const dashboardsMenus = [
     link: '/dashboard/Orders',
   },
   {
-    name: <IntlMessages id={'sidebar.dashboard.ecommerce'} />,
-    icon: <LocalGroceryStore />,
+    name: <IntlMessages id={'sidebar.dashboard.cusine'} />,
+    icon: <LocalDining />,
     type: 'item',
-    link: '/dashboard/eCommerce',
+    link: '/dashboard/Cuisines',
   },
   {
     name: <IntlMessages id={'sidebar.dashboard.news'} />,
