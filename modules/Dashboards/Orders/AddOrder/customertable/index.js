@@ -97,8 +97,23 @@ const TasksList = (props) => {
   const [visibleItems, setVisibleItems] = useState([]);
 
   const classes = useStyles();
-const router=useRouter()
 
+
+const Rows=[{
+  name:"nanak",
+  email:'nanaksethh@gmail.com',
+  phoneno:'8349492788'
+},
+{
+  name:"kki",
+  email:'nanaksethh@gmail.com',
+  phoneno:'8349492788'
+},
+{
+  name:"jlk",
+  email:'nanaksethh@gmail.com',
+  phoneno:'8349492788'
+}]
 
   useEffect(() => {
     setVisibleItems(Rows);
@@ -116,10 +131,12 @@ const router=useRouter()
   const getVisibleItems = () => {
     if (searchKeywords) {
       return visibleItems
-        .filter((item) => item.orderid.toLowerCase().includes(searchKeywords.toLowerCase()))
+        .filter((item) => item.name.toLowerCase().includes(searchKeywords.toLowerCase()))
         .slice(0, visibleItemsNo);
-    } else return visibleItems.slice(0, visibleItemsNo);
+    } else return visibleItems.slice(0, visibleItemsNo);  
   };
+
+
 const Coloumns=[{
     orderid:"orderid",
     vendorname:"Vendor Name" ,
@@ -134,28 +151,15 @@ DateTime:'Date /TIme',
     Actions:"Actions"
 }]
 
-const Rows=[{
-    name:"nanak",
-    email:'nanaksethh@gmail.com',
-    phoneno:'8349492788'
-},
-{
-    name:"nanak",
-    email:'nanaksethh@gmail.com',
-    phoneno:'8349492788'
-},
-{
-    name:"nanak",
-    email:'nanaksethh@gmail.com',
-    phoneno:'8349492788'
-}]
+
 
   return (
     <Grid item sm={12} md={6} lg={4} className={classes.backgrid} >
-    <CmtCard style={{boxShadow:'none',height:'100%'}}>
+    <CmtCard style={{boxShadow:'none',height:'90%'}}>
         <Box>
         <Button onClick={()=>{props.setplaceorder("total")}}>BACK</Button> 
         <Button onClick={()=>{props.setplaceorder("addcustomer")}}>+ADD NEW</Button> 
+        
         </Box>
       
       <CmtCardHeader
@@ -194,8 +198,10 @@ const Rows=[{
         )}
      
       </CmtCardContent>
-      
     </CmtCard>
+    <Box style={{display:'flex'}} justifyContent="center">
+    <Button onClick={()=>{props.setplaceorder("orderpreview")}} variant="contained" style={{background:'lightgreen'}}>PLACE ORDER</Button> 
+    </Box>
     </Grid>
   );
 };

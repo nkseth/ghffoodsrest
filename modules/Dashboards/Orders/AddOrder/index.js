@@ -8,6 +8,8 @@ import Items from './items';
 import Totalcal from './totalcal';
 import Customertable from './customertable'
 import Addcustomer from './addcustomer'
+import OrderPreview from './orderpreview';
+
 
 const useStyles = makeStyles((theme) => ({
   orderLg2: {
@@ -54,7 +56,10 @@ const ListingDashboard = () => {
      placeorder==="addcustomer"?  <Addcustomer  setplaceorder={setplaceo} />:null
     
    }
- 
+     {
+     placeorder==="orderpreview"?  <OrderPreview  setplaceorder={setplaceo} />:null
+    
+   }
   </Grid>
 
     </PageContainer>

@@ -104,21 +104,8 @@ const router=useRouter()
   }, []);
 
 
-  const onSearchQuery = (event) => {
-    setSearchKeywords(event.target.value);
-  };
+  
 
-  const onMoreClick = () => {
-    setVisibleItemsNo(visibleItemsNo + 5);
-  };
-
-  const getVisibleItems = () => {
-    if (searchKeywords) {
-      return visibleItems
-        .filter((item) => item.orderid.toLowerCase().includes(searchKeywords.toLowerCase()))
-        .slice(0, visibleItemsNo);
-    } else return visibleItems.slice(0, visibleItemsNo);
-  };
 const Coloumns=[{
     orderid:"orderid",
     vendorname:"Vendor Name" ,
@@ -150,7 +137,7 @@ const Rows=[{
 }]
 
   return (
-    <Grid item sm={12} md={6} lg={4} className={classes.backgrid} >
+    <Grid item sm={12} md={6} lg={12} className={classes.backgrid} >
     <CmtCard style={{boxShadow:'none',height:'100%'}}>
         <Box>
         <Button onClick={()=>{props.setplaceorder("ctable")}}>BACK</Button> 

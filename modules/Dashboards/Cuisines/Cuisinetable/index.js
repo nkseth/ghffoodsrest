@@ -3,22 +3,21 @@ import PerfectScrollbar from 'react-perfect-scrollbar';
 
 import { Box, Typography, Button } from '@material-ui/core';
 import makeStyles from '@material-ui/core/styles/makeStyles';
-import { useRouter } from 'next/router'
+
 import CmtCard from '../../../../@coremat/CmtCard';
 import CmtCardHeader from '../../../../@coremat/CmtCard/CmtCardHeader';
 import CmtSearch from '../../../../@coremat/CmtSearch';
 import CmtCardContent from '../../../../@coremat/CmtCard/CmtCardContent';
 import CmtList from '../../../../@coremat/CmtList';
-import { crm } from '../../../../@fake-db';
-import TaskItem from './TaskItem';
-import TaskItemHead from './TaskItemhead';
+import TaskItem from './Taskitem';
+import TaskItemHead from './Taskitemhead';
 
 const useStyles = makeStyles((theme) => ({
   headerRoot: {
     paddingBottom: 0,
     paddingTop: 0,
-    
     position: 'relative',
+  
     [theme.breakpoints.down('xs')]: {
       '&.Cmt-header-root': {
         flexDirection: 'column',
@@ -34,10 +33,13 @@ const useStyles = makeStyles((theme) => ({
     padding: '0 !important',
     borderTop: `solid 1px ${theme.palette.borderColor.main}`,
     marginTop: -1,
+    height:'100%',
+   
+   
   
   },
   scrollbarRoot: {
-    height: 280,
+    height: '45vh',
     width:'100%'
   },
   searchAction: {
@@ -84,11 +86,11 @@ const TasksList = () => {
   const [visibleItems, setVisibleItems] = useState([]);
 
   const classes = useStyles();
-const router=useRouter()
+
 
 
   useEffect(() => {
-    setVisibleItems(Rows);
+    setVisibleItems(rows);
   }, []);
 
 
@@ -103,83 +105,140 @@ const router=useRouter()
   const getVisibleItems = () => {
     if (searchKeywords) {
       return visibleItems
-        .filter((item) => item.orderid.toLowerCase().includes(searchKeywords.toLowerCase()))
+        .filter((item) => item.Name.toLowerCase().includes(searchKeywords.toLowerCase()))
         .slice(0, visibleItemsNo);
     } else return visibleItems.slice(0, visibleItemsNo);
   };
 const Coloumns=[{
-    orderid:"orderid",
-    vendorname:"Vendor Name" ,
-    userName:"User Name",
-DateTime:'Date /TIme',
-    orderstatus:"Order Status",
-    amount:"Amount" ,
-    paymentS:'Payment Status',
-    paymentT:"payment Type",
-    OrderAccept:'Order Accept',
-    AssignDriver:'Assign Driver',
-    Actions:"Actions"
+    number:"#",
+    image:'image',
+    name:'Cuisine Name',
+    action:'Actions'
 }]
 
-const Rows=[{
-  orderid:"#556841",
-  vendorname:"Alex's Kitchen" ,
-  userName:"Gg",
-  DateTime:"2021-08-02 04:17 Am ",
-  
-  orderstatus:"CANCEL",
-  amount:"500" ,
-  paymentS:'Payment Complete',
-  paymentT:"COD",
-  OrderAccept:'APPROVE',
-  AssignDriver:'Assign Driver',
-  
+const rows=[{
+    number:"1",
+    DPP:"Should be a url" ,
+     Name:"Nanak ",
+    Contact:"852412154",
+    DISOR:"YES",
+    Email:"nanaksethh2gmail.com",
+   
 },
 {
-  orderid:"#556841",
-  vendorname:"Alex's Kitchen" ,
-  userName:"Gg",
-  DateTime:"2021-08-02 04:17 Am ",
-  orderstatus:"PENDING",
-  amount:"500" ,
-  paymentS:'Payment Complete',
-  paymentT:"COD",
-  OrderAccept:'APPROVE',
-  AssignDriver:'Assign Driver',
-  
+    number:"1",
+    DPP:"Should be a url" ,
+    Name:"Nanak ",
+    Contact:"852412154",
+    DISOR:"YES",
+    Email:"nanaksethh2gmail.com",
+   
 },
 {
-  orderid:"#556841",
-  vendorname:"Alex's Kitchen" ,
-  userName:"Gg",
-  DateTime:"2021-08-02 04:17 Am ",
-  orderstatus:"APPROVE",
-  amount:"500" ,
-  paymentS:'Payment Complete',
-  paymentT:"COD",
-  OrderAccept:'APPROVE',
-  AssignDriver:'Assign Driver',
-  
-}]
+    number:"1",
+    DPP:"Should be a url" ,
+      Name:"Nanak ",
+    Contact:"852412154",
+    DISOR:"YES",
+    Email:"nanaksethh2gmail.com",
+   
+},
+{
+  number:"1",
+  DPP:"Should be a url" ,
+    Name:"Nanak ",
+  Contact:"852412154",
+  DISOR:"YES",
+  Email:"nanaksethh2gmail.com",
+ 
+},
+{
+  number:"1",
+  DPP:"Should be a url" ,
+    Name:"Nanak ",
+  Contact:"852412154",
+  DISOR:"YES",
+  Email:"nanaksethh2gmail.com",
+ 
+},
+{
+  number:"1",
+  DPP:"Should be a url" ,
+    Name:"Nanak ",
+  Contact:"852412154",
+  DISOR:"YES",
+  Email:"nanaksethh2gmail.com",
+ 
+},
+{
+  number:"1",
+  DPP:"Should be a url" ,
+    Name:"Nanak ",
+  Contact:"852412154",
+  DISOR:"YES",
+  Email:"nanaksethh2gmail.com",
+ 
+},
+{
+  number:"1",
+  DPP:"Should be a url" ,
+    Name:"Nanak ",
+  Contact:"852412154",
+  DISOR:"YES",
+  Email:"nanaksethh2gmail.com",
+ 
+},
+{
+  number:"1",
+  DPP:"Should be a url" ,
+    Name:"Nanak ",
+  Contact:"852412154",
+  DISOR:"YES",
+  Email:"nanaksethh2gmail.com",
+ 
+},
+{
+  number:"1",
+  DPP:"Should be a url" ,
+    Name:"Nanak ",
+  Contact:"852412154",
+  DISOR:"YES",
+  Email:"nanaksethh2gmail.com",
+ 
+},
+{
+  number:"1",
+  DPP:"Should be a url" ,
+    Name:"Nanak ",
+  Contact:"852412154",
+  DISOR:"YES",
+  Email:"nanaksethh2gmail.com",
+ 
+},
+{
+  number:"1",
+  DPP:"Should be a url" ,
+    Name:"Nanak ",
+  Contact:"852412154",
+  DISOR:"YES",
+  Email:"nanaksethh2gmail.com",
+ 
+},
+
+]
+
 
   return (
-    <>
-    <Button variant="contained" color="primary"  onClick={()=>{router.push("/dashboard/Orders/AddOrder")}}
-    style={{marginBottom:'10px'}}
-    >
-        ADD ORDER
-      </Button>
-    <CmtCard  >
-      
+    <CmtCard style={{minHeight:'53vh',paddingBottom:'10px'}}>
       <CmtCardHeader
         className={classes.headerRoot}
         title={
           <Box display="flex" alignItems="flex-start" flexDirection='column' m={4}>
             <Typography component="div" variant="h4" className={classes.titleRoot}>
-            Orders Management
+            Cuisine Menu
             </Typography>
              <Typography component="div" variant="h6" className={classes.subtitle}>
-             Add, Edit, Manage Orders.
+             Add, Edit, Manage Cuisine.
               </Typography>
           
           </Box>
@@ -192,11 +251,16 @@ const Rows=[{
           </div>
         </div>
       </CmtCardHeader>
-      <CmtCardContent className={classes.cardContentRoot} >
-        <PerfectScrollbar className={classes.scrollbarRoot}>
-          <CmtList data={Coloumns} renderRow={(item, index) => <TaskItemHead item={item} key={index} type="header" />}  />
-          <CmtList data={getVisibleItems()} renderRow={(item, index) => <TaskItem item={item} key={index} type="value" />}  />
+     
+      <CmtCardContent className={classes.cardContentRoot}>
+
+
+      <PerfectScrollbar className={classes.scrollbarRoot}>
+          <CmtList data={Coloumns} renderRow={(item, index) => <TaskItemHead item={item} key={index} type="header" index={index}/>}  />
+          <CmtList data={getVisibleItems()} renderRow={(item, index) => <TaskItem item={item} key={index} type="value" index={index} />}  />
         </PerfectScrollbar>
+        
+        
         {visibleItems.length > visibleItemsNo && (
           <Box pt={1} px={6} pb={6}>
             <Button className={classes.btnRoot} onClick={onMoreClick}>{`+ ${
@@ -208,7 +272,6 @@ const Rows=[{
       </CmtCardContent>
       
     </CmtCard>
-    </>
   );
 };
 

@@ -16,8 +16,6 @@ const useStyles = makeStyles((theme) => ({
   taskItemRoot: {
     padding: '7px 24px 7px 12px',
     width:"100%",
-    flexWrap:'no-wrap',
-
     transition: 'all .2s',
       backgroundColor: alpha(theme.palette.primary.main, 0.04),
       transform: 'translateY(-4px)',
@@ -29,8 +27,10 @@ const useStyles = makeStyles((theme) => ({
   },
   titleRoot: {
     color: theme.palette.text.disabled,
-    fontSize: 12,
-    maxWidth:'100%',
+    fontSize: 16,
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
     width: '90%',
   },
   dots: {
@@ -74,47 +74,27 @@ const [dstate,setdstate]=useState(false)
   return (
     <div className={classes.taskItemRoot}>
       <Deletemodel open={dstate} close={()=>{setdstate(false)}}/>
-      <GridContainer alignItems="center" style={{flexWrap:'nowrap'}}> 
+      <GridContainer alignItems="center"> 
         
-<Grid sm={0.5}>
+<Grid sm={1}>
  <Checkbox checked={isCompleted} onChange={(e) => setIsCompleted(e.target.checked)} />
 </Grid>
-<Grid item sm={1}>
-           <Typography className={classes.titleRoot}>{item.orderid}</Typography>
+     
+        
+         <Grid item sm={2}>
+           <Typography className={classes.titleRoot}>{item.number}</Typography>
         </Grid>
-        
-         <Grid item sm={1}>
-            <Typography className={classes.titleRoot}>{item.vendorname}</Typography> 
+        <Grid item sm={2}>
+            <Typography className={classes.titleRoot}>{item.image}</Typography> 
+        </Grid> 
+         <Grid item sm={4}>
+            <Typography className={classes.titleRoot}>{item.name}</Typography> 
         </Grid>  
-         <Grid item  sm={1}>
-            <Typography className={classes.titleRoot}>{item.userName}</Typography>
+         <Grid item  sm={3}>
+            <Typography className={classes.titleRoot}>{item.action}</Typography>
         </Grid> 
-          
-        <Grid item sm={1}>
-            <Typography className={classes.titleRoot}>{item.DateTime}</Typography>
-        </Grid> 
-        <Grid item sm={1}>
-            <Typography className={classes.titleRoot}>{item.orderstatus}</Typography>
-        </Grid> 
-        <Grid item sm={1}>
-            <Typography className={classes.titleRoot}>{item.amount}</Typography>
-        </Grid> 
-        <Grid item sm={1}>
-            <Typography className={classes.titleRoot}>{item.paymentS}</Typography>
-        </Grid> 
-        <Grid item sm={1}>
-            <Typography className={classes.titleRoot}>{item.paymentT}</Typography>
-        </Grid> 
-        <Grid item sm={1}>
-            <Typography className={classes.titleRoot}>{item.OrderAccept}</Typography>
-        </Grid> 
-        <Grid item sm={1}>
         
-            <Typography className={classes.titleRoot}>{item.AssignDriver}</Typography>
-        </Grid> 
-<Grid item sm={1.5}>
-            <Typography className={classes.titleRoot}>{item.Actions}</Typography>
-        </Grid> 
+
     
        
       </GridContainer>

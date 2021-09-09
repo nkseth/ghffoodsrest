@@ -60,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.warning.main,
   },
   formControl: {
-    margin: theme.spacing(1),
+   
     minWidth: 70,
   },
 }));
@@ -79,10 +79,10 @@ const [dstate,setdstate]=useState(false)
     <div className={classes.taskItemRoot}>
       <Deletemodel open={dstate} close={()=>{setdstate(false)}}/>
      
-      <GridContainer alignItems="center"> 
+      <GridContainer alignItems="center" style={{flexWrap:'nowrap'}}> 
         
 <Grid sm={0.5}>
- <Checkbox checked={isCompleted} onChange={(e) => setIsCompleted(e.target.checked)} />
+ <Checkbox checked={isCompleted} onChange={(e) => setIsCompleted(e.target.checked)} justifyContent="center" />
 </Grid>
        
        <Grid item sm={1}>
@@ -113,7 +113,7 @@ const [dstate,setdstate]=useState(false)
         </Grid> 
         <Grid item sm={1}>
         <FormControl variant="filled" className={classes.formControl}>
-        <InputLabel id="demo-simple-select-filled-label">Orders</InputLabel>
+        
         <Select fullWidth  variant="outlined"
           labelId="demo-simple-select-filled-label"
           id="demo-simple-select-filled" 
@@ -128,9 +128,9 @@ const [dstate,setdstate]=useState(false)
         </Select>
       </FormControl>
         </Grid> 
-        <Grid item sm={1}>
+        <Grid item sm={1} >
         <FormControl variant="filled" className={classes.formControl}>
-        <InputLabel id="demo-simple-select-filled-label">Driver</InputLabel>
+        
         <Select fullWidth  variant="outlined"
           labelId="demo-simple-select-filled-label"
           id="demo-simple-select-filled"

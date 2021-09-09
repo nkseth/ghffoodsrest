@@ -3,6 +3,7 @@ import { makeStyles ,alpha} from '@material-ui/styles';
 import React,{useState} from 'react'
 import classNames from 'classnames'
 import Customerlist from './customertable'
+import {useRouter} from 'next/router'
 
 const useStyles = makeStyles((theme) => ({
     taskItemRoot: {
@@ -85,11 +86,11 @@ lineHeight: "none"
 
 
 
-const Totalcal=(props)=>{
+const OrderPreview=(props)=>{
   const [addeditem,setaddeditem]=useState()
  const menu=["Burger","Pizza","Chicken"]
 
-
+const router= useRouter()
 
 
 const classes=useStyles()
@@ -116,12 +117,14 @@ return(
                       <h3 className={classes.itemname}>Sandwich</h3>
                       <h5 className={classes.itemdis}>this is a very good Sandwich</h5>
                       <h3>Rs 21/-</h3>
+                      <label>x2</label>
                       </Box>
 
-                      <Box>
-                        <Button className={classes.addbutton} variant="contained">+</Button>
-                        <label>1</label>
-                        <Button className={classes.minusbutton}>-</Button>
+                      
+                      
+                      <Box ml={3}>
+                        
+                        <label>Rs 42/-</label>
                       </Box> 
                       </Box>
                      
@@ -136,10 +139,10 @@ return(
           <h3>Amount: 30</h3>
       </Box>
       <Box>
-         <Button variant="contained" color="primary" onClick={()=>{props.setplaceorder("ctable")}}>Place Order</Button>
+         <Button variant="contained" color="primary" onClick={()=>{router.push('/dashboard/Orders')}}>Place Order</Button>
       </Box>
   </Grid>
     </Grid>
 )
 }
-export default Totalcal
+export default OrderPreview
