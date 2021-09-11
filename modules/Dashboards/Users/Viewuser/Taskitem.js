@@ -100,7 +100,7 @@ const [dstate,setdstate]=useState(false)
            <Box style={{display:'flex',flexDirection:'row' ,alignItems:'center'}}>
                   <Switch />
                   <Tooltip title="View" 
-                   onClick={()=>{router.push("/dashboard/Users/Viewuser/19")}}  >
+                   onClick={()=>{router.push("/dashboard/Users/Edituser/19")}}  >
                    <IconButton >
                     < VisibilityIcon/>
                    </IconButton>
